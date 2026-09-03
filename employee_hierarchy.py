@@ -7,7 +7,7 @@ class Employee:
         print(self.name, "is doing regular work.")
 
     def describe(self):
-        print("Employee:", self.name, "- Salary:", self.salary)
+        print(self.name, "- Salary:", self.salary)
 
 
 class Manager(Employee):
@@ -19,21 +19,17 @@ class Manager(Employee):
         super().work()
         print(self.name, "is also managing", self.team_size, "people.")
 
-
     def describe(self):
-        print("Manager:", self.name)
-        print("Salary:", self.salary)
-        print("Team Size:", self.team_size)
+        print(self.name, "- Salary:", self.salary, "- Team Size:", self.team_size)
 
 
-m = Manager("Ana", 80000, 5)
-e = Employee("John", 30000)
+e = Employee("James", 5000)
+m = Manager("Ana", 8000, 5)
 
+e.work()
+e.describe()
 
-print("MANAGER:")
 m.work()
 m.describe()
 
-print("\nEMPLOYEE:")
-e.work()
-e.describe()
+print(isinstance(m, Employee))
